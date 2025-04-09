@@ -1,0 +1,196 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #2c3e50, #4a69bd);
+  color: #fff;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+  color: #ffeaa7;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  color: #dfe6e9;
+  font-size: 1.1rem;
+  padding: 5px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Main content styles */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destination-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.7s ease-out forwards;
+  opacity: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.place-image {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
+}
+
+.destination-card:hover .place-image {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 15px;
+}
+
+h2 {
+  color: #ffeaa7;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card-content p {
+  color: #dfe6e9;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+/* Button styles */
+.view-more {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: #e17055;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.view-more:hover {
+  background-color: #d63031;
+  transform: scale(1.05);
+}
+
+/* Animation definitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation delay for cards */
+.destination-card:nth-child(1) { animation-delay: 0.1s; }
+.destination-card:nth-child(2) { animation-delay: 0.2s; }
+.destination-card:nth-child(3) { animation-delay: 0.3s; }
+.destination-card:nth-child(4) { animation-delay: 0.4s; }
+.destination-card:nth-child(5) { animation-delay: 0.5s; }
+.destination-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .place-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 1.7rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+  
+  .place-image {
+    height: 200px;
+  }
+}
+.bordeaux {
+  background-image: url("bordeaux.jpg");
+}
+
+.annecy {
+  background-image: url("Annency.jpg");
+}
+
+.strasbourg {
+  background-image: url("Strasbourg.jpg");
+}
+
+.marseille {
+  background-image: url("marseille.jpg");
+}
+
+.metz {
+  background-image: url("Metz.jpg");
+}
+
+.rouen {
+  background-image: url("Rouen.jpg");
+}

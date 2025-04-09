@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Metz - A Hidden Gem in France</title>
+    <link rel="stylesheet" href="metz.css">
+    <script defer>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.attraction');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Add smooth scrolling
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Discover Metz</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#attractions">Attractions</a></li>
+            <li><a href="#food">Food</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#trips">Day Trips</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="about" class="intro fade-in">
+            <p>Metz is a historic yet modern city, offering a mix of medieval architecture, stunning stained-glass cathedrals, and contemporary art. Explore the Metz Cathedral, relax by the Moselle River, and visit the Centre Pompidou-Metz for a taste of modern culture. Don't miss the Place Saint-Louis, Porte des Allemands, and Temple Neuf for picture-perfect spots. Food lovers can enjoy local treats at the Covered Market, while nature lovers can explore Metz's green spaces. It's a hidden gem with one of the most beautiful cathedrals in Europe, charming old town streets, and a mix of history and modern art.</p>
+        </section>
+        
+        <h2 id="attractions">Famous Attractions</h2>
+        
+        <div class="grid-container">
+            <section class="attraction">
+                <h2>Metz Cathedral</h2>
+                <h3>The "Lantern of God"</h3>
+                <img src="metzcathedral.jpg" class="Metz-img" alt="Metz Cathedral with stunning stained glass">
+                <ul>
+                    <li>One of the most stunning Gothic cathedrals in France, built between the 13th and 16th centuries.</li>
+                    <li>Known for its huge stained-glass windows, some designed by famous artists like Marc Chagall.</li>
+                    <li>Nicknamed <b>"Lantern of God"</b> because it has the largest stained-glass surface in Europe (6,500 m²).</li>
+                    <li><b>Best for:</b> Architecture lovers, history buffs, and breathtaking interior views.</li>
+                </ul>
+                <a href="#" class="btn">Learn More</a>
+            </section>
+            
+            <section class="attraction">
+                <h2>Place Saint-Louis</h2>
+                <h3>A Medieval Square with Italian Charm</h3>
+                <img src="metzplacesaint.jpg" class="Metz-img" alt="Medieval Place Saint-Louis square">
+                <ul>
+                    <li>A historic square with medieval arcades and Italian-style houses.</li>
+                    <li>Originally a financial center for Italian merchants in the Middle Ages.</li>
+                    <li>Now filled with cafés, shops, and a lively atmosphere, especially in the evenings.</li>
+                    <li><b>Best for:</b> Sitting at a café and soaking in the medieval charm.</li>
+                </ul>
+                <a href="#" class="btn">Discover More</a>
+            </section>
+            
+            <section class="attraction">
+                <h2>Centre Pompidou-Metz</h2>
+                <h3>A Modern Art Icon</h3>
+                <img src="metzmuseum.jpg" class="Metz-img" alt="Modern Centre Pompidou-Metz museum">
+                <ul>
+                    <li>A striking contemporary art museum, designed by Shigeru Ban.</li>
+                    <li>Sister museum to the famous Centre Pompidou in Paris, showcasing modern and contemporary art.</li>
+                    <li>Features rotating exhibitions with paintings, sculptures, and digital art.</li>
+                    <li>Has a unique wave-shaped roof inspired by a Chinese hat.</li>
+                    <li><b>Best for:</b> Art lovers and those looking for a contrast to Metz's historical sites.</li>
+                </ul>
+                <a href="#" class="btn">View Exhibitions</a>
+            </section>
+        </div>
+            
+        <div class="grid-container">
+            <section id="food" class="attraction">
+                <h2>The Old Town & Covered Market</h2>
+                <h3>Local Gastronomy</h3>
+                <img src="Metzoldtown.jpg" class="Metz-img" alt="Metz Old Town streets">
+                <ul>
+                    <li>Metz's historic center is filled with narrow streets, hidden courtyards, and charming squares.</li>
+                    <li><b>Marché Couvert (Covered Market)</b> is a lively place to try local specialties like:</li>
+                    <ul>
+                        <li>Quiche Lorraine (originating from this region!).</li>
+                        <li>Miran, a local cheese.</li>
+                        <li>Macarons de Boulay, Metz's unique version of the famous dessert.</li>
+                    </ul>   
+                    <li><b>Best for:</b> Food lovers and souvenir hunters.</li>
+                </ul>
+                <a href="#" class="btn">Taste Local Flavors</a>
+            </section>
+            
+            <section class="attraction">
+                <h2>Temple Neuf</h2>
+                <h3>A Fairytale-like Church on the River</h3>
+                <img src="metztemple.jpg" class="Metz-img" alt="Temple Neuf on the water">
+                <ul>
+                    <li>A picturesque Protestant church built on an island in the Moselle River</li>
+                    <li>Built in Romanesque Revival style in the early 20th century</li>
+                    <li>Creates a stunning reflection on the water, perfect for photographs</li>
+                    <li><b>Best for:</b> Photographers and romantic views, especially at sunset</li>
+                </ul>
+                <a href="#" class="btn">Explore More</a>
+            </section>
+            
+            <section class="attraction">
+                <h2>Porte des Allemands</h2>
+                <h3>A Medieval City Gate</h3>
+                <img src="metzgate.jpg" class="Metz-img" alt="Medieval Porte des Allemands gate">
+                <ul>
+                    <li>A 13th-century fortified gate that once protected Metz from invaders. </li>
+                    <li>Looks like a mini-castle, with stone towers and bridges over the river.</li>
+                    <li>Now open for visits, with stunning views of the Moselle River.</li>
+                    <li><b>Best for:</b> History lovers and medieval architecture fans.</li>
+                </ul>
+                <a href="#" class="btn">Step Back in Time</a>
+            </section>
+        </div>
+        
+        <div class="grid-container">
+            <section class="attraction">
+                <h2>Moselle River Walks & Boat Tours</h2>
+                <img src="metzmoselle.jpg" class="Metz-img" alt="Moselle River in Metz">
+                <ul>
+                    <li>Metz is built around the Moselle River, offering scenic riverside walks and boat rides.</li>
+                    <li>The Promenade des Remparts is a great way to see the city's historic walls.</li>
+                    <li>Rent a boat or take a cruise for a relaxing view of Metz from the water.</li>
+                    <li><b>Best for:</b> Couples, families, and those looking to unwind.</li>
+                </ul>
+                <a href="#" class="btn">River Activities</a>
+            </section>
+            
+            <section class="attraction">
+                <h2>Esplanade & Jardin de l'Esplanade</h2>
+                <h3>Green Oasis in the City</h3>
+                <img src="metzgarden.jpg" class="Metz-img" alt="Esplanade gardens in Metz">
+                <ul>
+                    <li>A beautiful park with fountains, flowers, and a view of the Moselle River.</li>
+                    <li>Popular for picnics, relaxing, and enjoying open-air concerts in summer.</li>
+                    <li><b>Best for:</b> A peaceful break from sightseeing.</li>
+                </ul>
+                <a href="#" class="btn">Visit the Gardens</a>
+            </section>
+            
+            <section id="events" class="attraction">
+                <h2>Festivals & Events in Metz</h2>
+                <img src="metzfestival.jpg" class="Metz-img" alt="Festival celebration in Metz">
+                <ul>
+                    <li><b>Mirabelle Plum Festival (August) – </b>Celebrating the local Mirabelle plum with food, concerts, and fireworks.</li>
+                    <li><b>Metz Christmas Market (November–December) – </b>One of the largest Christmas markets in France, with magical lights and mulled wine.</li>
+                    <li><b>Constellations de Metz (Summer) –</b>A digital art and light festival that illuminates city landmarks.</li>
+                </ul>
+                <a href="#" class="btn">Event Calendar</a>
+            </section>
+        </div>
+        
+        <section id="trips" class="attraction">
+            <h2>Day Trips from Metz</h2>
+            <div class="grid-container">
+                <div>
+                    <h3>Nancy</h3>
+                    <p>A beautiful city with the stunning Place Stanislas, a UNESCO World Heritage site. (45 min)</p>
+                </div>
+                <div>
+                    <h3>Verdun</h3>
+                    <p>A historic town famous for World War I battlefields and memorials. (1h)</p>
+                </div>
+                <div>
+                    <h3>Luxembourg City</h3>
+                    <p>A great international day trip to see another small European country. (1h15)</p>
+                </div>
+                <div>
+                    <h3>Strasbourg</h3>
+                    <p>A mix of French and German culture, famous for its half-timbered houses and Christmas markets. (1h30)</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="attraction">
+            <h2>Best Time to Visit Metz</h2>
+            <div class="grid-container">
+                <div>
+                    <h3>Spring (April–June)</h3>
+                    <p>Best for outdoor sightseeing, blooming gardens, and festivals.</p>
+                </div>
+                <div>
+                    <h3>Summer (July–August)</h3>
+                    <p>Lively atmosphere with open-air events and night markets.</p>
+                </div>
+                <div>
+                    <h3>Autumn (September–October)</h3>
+                    <p>Perfect for food lovers (Mirabelle plums and wine season).</p>
+                </div>
+                <div>
+                    <h3>Winter (November–December)</h3>
+                    <p>Magical Christmas markets and festive decorations.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Discover Metz | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

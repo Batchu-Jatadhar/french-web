@@ -1,0 +1,243 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #005c8a;
+  --accent-color: #f9a825;
+  --text-light: #f5f5f5;
+  --text-dark: #333;
+  --background-dark: #1e3a5f;
+  --background-light: #f5f5f5;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --transition-speed: 0.3s;
+}
+
+body {
+  background: linear-gradient(135deg, var(--background-dark), #0f2442);
+  color: var(--text-light);
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Layout */
+header {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://source.unsplash.com/random/1200x400/?marseille') center/cover no-repeat;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Typography */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease-out;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin: 2rem 0 1rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  transition: transform var(--transition-speed);
+}
+
+h2:hover {
+  transform: translateX(10px);
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Lists */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+li {
+  color: var(--text-light);
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  transition: transform var(--transition-speed);
+}
+
+li:hover {
+  transform: translateX(5px);
+}
+
+li::before {
+  content: "•";
+  color: var(--accent-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+li b {
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+/* Images */
+.Marseille-img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: all var(--transition-speed);
+  animation: fadeIn 1s ease-out;
+}
+
+.Marseille-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Section styling */
+section {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform var(--transition-speed);
+  box-shadow: var(--shadow);
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  main {
+    padding: 3rem;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  h1 {
+    font-size: 4.5rem;
+  }
+  
+  h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  header {
+    padding: 1rem;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  .Marseille-img {
+    max-height: 250px;
+  }
+}
+  
