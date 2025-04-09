@@ -1,0 +1,311 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #e7dacb;
+    --secondary-color: #742f37;
+    --background-color: #2d2a2e;
+    --accent-color: #6a7b76;
+    --text-light: #f8f5f0;
+    --text-dark: #333;
+    --transition-speed: 0.3s;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-light);
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 15px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    transition: transform var(--transition-speed);
+}
+
+h2:hover {
+    transform: translateX(10px);
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+li {
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    list-style-position: inside;
+}
+
+/* Layout */
+header {
+    background: linear-gradient(rgba(45, 42, 46, 0.7), rgba(45, 42, 46, 0.9)), url('strascathedrale.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Images */
+.Stras-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.Stras-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Lists */
+ul {
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+ul ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    list-style-type: none;
+}
+
+ul li::before {
+    content: "•";
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+b {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Add animation to sections as they appear */
+h2, p, ul {
+    animation: slideIn 0.8s ease-out;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: rgba(45, 42, 46, 0.7);
+    border-radius: 8px;
+    transition: transform var(--transition-speed);
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+/* Navigation for a future enhancement */
+nav {
+    background-color: var(--accent-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+    padding: 0;
+}
+
+nav li::before {
+    content: none;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    h1, h2, p, ul, .Stras-img, section {
+        grid-column: span 2;
+    }
+    
+    .Stras-img {
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    h1, p:first-of-type, p:last-of-type {
+        grid-column: span 3;
+    }
+    
+    h2, section, .Stras-img {
+        grid-column: span 1;
+    }
+    
+    header {
+        padding: 8rem 0;
+    }
+}
+
+/* Small screen adjustments */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .Stras-img {
+        margin: 1rem 0;
+    }
+}
+
+/* Dark mode toggle - for future enhancement */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-speed);
+    z-index: 10;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--secondary-color);
+}
+
+/* Additional element for future enhancement */
+.scroll-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-speed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+}
